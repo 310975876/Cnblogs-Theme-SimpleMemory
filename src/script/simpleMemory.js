@@ -94,7 +94,7 @@ if (initCheck()) {
         // ---- GitHub文件源配置 ----
         GhUserName: '310975876',// GitHub用户名(不是昵称)，注意大小写
         GhRepositories: 'Cnblogs-Theme-SimpleMemory',// GitHub主题仓库名称
-        GhVersions: 'v1.3.3',// GitHub发布版本或提交哈希值
+        GhVersions: 'v1.3.0',// GitHub发布版本或提交哈希值
         CnVersions: "",
         // ---- 基础信息配置 ----custom
         blogUser: "Ning",// 博主名称，文章后缀和主页图片上都会使用此名称
