@@ -89,30 +89,57 @@ if (initCheck()) {
         '<div id="loading"></div>'  +
         '<div id="bottomProgressBar"></div>' +
         '<div id="rightMenu"></div>';
-
+//博客全局配置
     window.cnblogsConfigDefault = {
-        GhUserName: 'BNDong',
-        GhRepositories: 'Cnblogs-Theme-SimpleMemory',
-        GhVersions: 'v1.3.3',
+        // ---- GitHub文件源配置 ----
+        GhUserName: '310975876',// GitHub用户名(不是昵称)，注意大小写
+        GhRepositories: 'Cnblogs-Theme-SimpleMemory',// GitHub主题仓库名称
+        GhVersions: 'v1.3.3',// GitHub发布版本或提交哈希值
         CnVersions: "",
-        blogUser: "",
-        blogAvatar: "",
-        blogStartDate: "2019-01-01",
-        menuCustomList: {},
+        // ---- 基础信息配置 ----custom
+        blogUser: "Ning",// 博主名称，文章后缀和主页图片上都会使用此名称
+        blogAvatar: "https://cdn.jsdelivr.net/gh/310975876/Cnblogs-Theme-SimpleMemory@master/img/logo.png", // 用户头像URL
+        blogStartDate: "2019-06-12",// 入园时间，年-月-日，入园时间查看方法：鼠标停留园龄时间上，会显示入园时间
+        // ---- 菜单配置 ----
+        menuCustomList: {// 自定义菜单数据，显示在正常数据下方
+            "title1": {// 标题
+                "data": [ // 列表数据 ['列表', '链接']
+                    ['我的博客1', 'https://www.cnblogs.com/reasonzzy'],
+                    ['我的博客2', 'https://www.cnblogs.com/reasonzzy'],
+                    ['我的博客3', 'https://www.cnblogs.com/reasonzzy'],
+                    ['我的博客4', 'https://www.cnblogs.com/reasonzzy'],
+                    ['我的博客5', 'https://www.cnblogs.com/reasonzzy'],
+                ],
+                "icon": "icon-brush_fill" // 配置图标，参考文档：本博客字体图标库及其更换方法
+            },
+            "title2": { // 标题
+                "data": [ // 列表数据 ['列表', '链接']
+                    ['我的博客6', 'https://www.cnblogs.com/reasonzzy'],
+                    ['我的博客7', 'https://www.cnblogs.com/reasonzzy'],
+                    ['我的博客8', 'https://www.cnblogs.com/reasonzzy'],
+                    ['我的博客9', 'https://www.cnblogs.com/reasonzzy'],
+                    ['我的博客10', 'https://www.cnblogs.com/reasonzzy'],
+                ],
+                "icon": "icon-brush_fill" // 配置图标，参考文档：本博客字体图标库及其更换方法
+            },
+        },
         menuNavList: [],
         menuUserInfoBgImg: '',
-        webpageTitleOnblur: "(oﾟvﾟ)ノ Hi",
-        webpageTitleOnblurTimeOut: 500,
-        webpageTitleFocus: "(*´∇｀*) 欢迎回来！",
-        webpageTitleFocusTimeOut: 1000,
-        webpageIcon: "",
+        // ---- 网站配置 ----
+        webpageTitleOnblur: "(oﾟvﾟ)ノ Hi",// 当前页失去焦点，页面title显示文字
+        webpageTitleOnblurTimeOut: 500,// 当前页失去焦点，页面title变化，延时时间，单位毫秒
+        webpageTitleFocus: "(*´∇｀*) 欢迎回来！",// 当前页获取焦点，页面title显示文字，显示后延时恢复原title
+        webpageTitleFocusTimeOut: 1000,// 当前页获取焦点，页面title变化，延时时间，单位毫秒
+        webpageIcon: "https://cdn.jsdelivr.net/gh/310975876/Cnblogs-Theme-SimpleMemory@master/img/favicon.png",// 网站图标
         fontIconExtend: "",
+        // ---- 进度条配置 ----
         progressBar: {
             id: 'top-progress-bar',
             color: '#77b6ff',
             height: '2px',
             duration: 0.2
         },
+        // ---- Loading配置 ----
         loading: {
             rebound: {
                 tension: 16,
@@ -134,15 +161,16 @@ if (initCheck()) {
                 renderBase: false
             }
         },
-        homeTopAnimationRendered: true,
-        homeTopAnimation: {
+        // ---- 页面动效配置 ----
+        homeTopAnimationRendered: true,// true || false ,是否渲染主页头图动效
+        homeTopAnimation: { // 主页头图动效设置
             radius: 15,
             density: 0.2,
-            color: 'rgba(255,255,255, .2)',
+            color: 'rgba(255,255,255, .2)',// 颜色设置，“random” 为随机颜色
             clearOffset: 0.3
         },
-        essayTopAnimationRendered: true,
-        essayTopAnimation: {
+        essayTopAnimationRendered: true,// true || false ,是否渲染随笔页头图动效
+        essayTopAnimation: {// 随笔页头图动效设置
             triW: 14,
             triH: 20,
             neighbours: ["side", "top", "bottom"],
@@ -160,8 +188,8 @@ if (initCheck()) {
                 '#8EE5DE', '#304E7B'
             ]
         },
-        bgAnimationRendered: true,
-        backgroundAnimation: {
+        bgAnimationRendered: true,// true || false ,是否渲染背景动效
+        backgroundAnimation: {// 背景动效设置
             colorSaturation: "60%",
             colorBrightness: "50%",
             colorAlpha: 0.5,
@@ -173,16 +201,18 @@ if (initCheck()) {
             parallaxAmount: -0.2,
             animateSections: true
         },
-        homeTopImg: [
+        // ---- 主页配置 ----
+        homeTopImg: [// 主页图片Url，推荐尺寸>= 1920*1080，支持多张，每次刷新随机设置一张
             "https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@master/img/webp/home_top_bg.webp"
         ],
-        homeBannerText: "",
+        homeBannerText: "",// 主页头图上的标语，设置此选项会固定显示文字，默认为空，自动获取一句。
         homeBannerTextType: "jinrishici",
-        essayTopImg: [
+        // ---- 随笔页配置 ----
+        essayTopImg: [// 随笔页图片Url，支持多张，每次刷新随机设置一张
             "https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@master/img/webp/nothome_top_bg.webp"
         ],
-        essayCodeHighlightingType: 'cnblogs',
-        essayCodeHighlighting: '',
+        essayCodeHighlightingType: 'cnblogs',// 代码主题插件类型：cnblogs || highlightjs || prettify
+        essayCodeHighlighting: '',// 代码高亮主题，具体主题参考文档
         essayCodeLanguages: [],
         essayCode: {
             fontFamily: "'Ubuntu Mono',monospace",
@@ -191,24 +221,33 @@ if (initCheck()) {
         codeMaxHeight: false,
         codeLineNumber: false,
         essayTitleStyle: false,
-        essaySuffix: {
+        essaySuffix: {// 随笔后缀处配置
             codeImgUrl: '',
-            aboutHtml: '',
-            copyrightHtml: '',
-            supportHtml: ''
+            aboutHtml: '',// 关于博主，不配置使用默认
+            copyrightHtml: '',// 版权声明，不配置使用默认
+            supportHtml: ''// 声援博主，不配置使用默认
         },
-        bottomBlogroll: [],
-        bottomText: {
+        // ---- 页脚配置 ----
+        bottomBlogroll: [// 友情链接，[[链接名,链接]....]
+            ["程序人生", 'http://anrs.net/'],
+        ],
+        bottomText: {// 页脚标语
             iconFont: {
                 icon:  "icon-xl",
                 color: "red",
                 fontSize: "16px"
             },
-            left: "",
-            right: "",
+            icon: "❤",
+            left: "学无止境",
+            right: "谦卑而行",
         },
         footerStyle: 2,
-        consoleList: [],
+        // ---- 控制台输出 ----
+        consoleList: [
+            ['Ning CNBlogs', ''],
+            ['Ning GitHub', ''],
+            ['Ning Email', '@qq.com']
+        ],
         bookList: [],
         themeAuthor: false,
         isVersionMapping: false,
@@ -311,7 +350,7 @@ function getVersionConfig() {
             }
         });
 
-    } else if(window.cnblogsConfig.GhUserName === 'BNDong') {
+    } else if(window.cnblogsConfig.GhUserName === '310975876') {
         window.themeVersion = [
             [
                 "v1.1.6",
